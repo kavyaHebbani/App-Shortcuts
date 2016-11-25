@@ -1,0 +1,33 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shortcut
+            android:shortcutId="open_cart"
+            android:enabled="true"
+            android:icon="@drawable/shopping_cart"
+            android:shortcutShortLabel="@string/open_cart_short_label"
+            android:shortcutLongLabel="@string/open_cart_long_label"
+            android:shortcutDisabledMessage="@string/disabled_message">
+        <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="upday.sample.shortcuts"
+                android:targetClass="upday.sample.shortcuts.MainActivity">
+            <extra android:name="fragment" android:value="cart"/>
+        </intent>
+    </shortcut>
+
+    <shortcut
+            android:shortcutId="all_categories"
+            android:enabled="true"
+            android:icon="@drawable/categories"
+            android:shortcutShortLabel="@string/all_categories_short_label"
+            android:shortcutLongLabel="@string/all_categories_long_label"
+            android:shortcutDisabledMessage="@string/disabled_message">
+        <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="upday.sample.shortcuts"
+                android:targetClass="upday.sample.shortcuts.MainActivity">
+            <extra android:name="fragment" android:value="categories"/>
+        </intent>
+    </shortcut>
+
+</shortcuts>

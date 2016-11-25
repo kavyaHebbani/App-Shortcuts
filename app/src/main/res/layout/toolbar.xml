@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/colorPrimaryDark">
+
+    <android.support.v7.widget.Toolbar android:layout_width="match_parent"
+                                       android:layout_height="wrap_content"
+                                       android:id="@+id/toolbar">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      android:orientation="horizontal"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:gravity="center">
+
+            <TextView android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:text="@string/app_name"
+                      android:textSize="24dp"
+                      android:textColor="@android:color/white"
+                      android:layout_weight="1"
+                      android:layout_marginStart="8dp"/>
+
+            <ImageView android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/cart"
+                       android:src="@drawable/shopping_cart_white"
+                       android:layout_marginEnd="8dp"/>
+
+            <ImageView android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/categories"
+                       android:src="@drawable/categories_white"
+                       android:layout_marginEnd="8dp"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+</LinearLayout>
