@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="mainBackground">#27000000</color>
     <color name="toolbarColor">#97000000</color>
+    <color name="iconBackground">#00f5f5f5</color>
 </resources>

@@ -1,6 +1,7 @@
 package upday.sample.shortcuts;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,11 +13,15 @@ import android.view.ViewGroup;
 import upday.sample.shortcuts.adapter.MainRecyclerViewAdapter;
 
 import static upday.sample.shortcuts.data.ItemListGenerator.getItemsList;
+import static upday.sample.shortcuts.data.ItemListGenerator.getItemsListForCategory;
 
 /**
  * Created by kavya on, 23/11/16.
  */
 public class MainFragment extends Fragment {
+
+    @NonNull
+    private final MainRecyclerViewAdapter mAdapter = new MainRecyclerViewAdapter();
 
     @Nullable
     @Override
@@ -31,7 +36,13 @@ public class MainFragment extends Fragment {
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.main_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(new MainRecyclerViewAdapter(getItemsList()));
+        recyclerView.setAdapter(mAdapter);
+        mAdapter.setItems(getItemsList());
+    }
+
+    public void updateItemsForCategory(String category) {
+        DynamicShortcuts.reportShortcutUsed(getContext(), category);
+        mAdapter.setItems(getItemsListForCategory(category));
     }
 
 }

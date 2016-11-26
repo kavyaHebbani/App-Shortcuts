@@ -10,8 +10,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import upday.sample.shortcuts.data.Item;
 import upday.sample.shortcuts.R;
+import upday.sample.shortcuts.data.Item;
 
 /**
  * Created by kavya on, 23/11/16.
@@ -23,8 +23,10 @@ public class MainRecyclerViewAdapter
     @NonNull
     private final List<Item> mItems = new ArrayList<>();
 
-    public MainRecyclerViewAdapter(@NonNull List<Item> items) {
+    public void setItems(@NonNull List<Item> items) {
+        mItems.clear();
         mItems.addAll(items);
+        notifyDataSetChanged();
     }
 
     @Override

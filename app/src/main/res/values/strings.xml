@@ -3,11 +3,13 @@
 
     <string name="open_cart_short_label">My Shopping Cart</string>
     <string name="open_cart_long_label">Open My Shopping Cart</string>
-
     <string name="all_categories_short_label">All Categories</string>
     <string name="all_categories_long_label">Open List Of All Categories</string>
 
     <string name="disabled_message">This link is no more valid</string>
-
     <string name="cart_message">Your cart is empty. \nPlease add items.</string>
+    <string name="categories_description">Click on a category to add to App Shortcuts.</string>
+    <string name="category_toast_message">Shortcut has been added for %s</string>
+    <string name="remove_shortcuts">Remove shortcut to categories</string>
+    <string name="shortcuts_removed">Shortcuts removed</string>
 </resources>

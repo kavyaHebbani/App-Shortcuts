@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import upday.sample.shortcuts.adapter.CategoriesRecyclerViewAdapter;
 
@@ -32,7 +33,10 @@ public class CategoriesFragment extends Fragment {
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.categories_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(new CategoriesRecyclerViewAdapter(getCategoriesList()));
+        recyclerView.setAdapter(new CategoriesRecyclerViewAdapter(getContext(), getCategoriesList()));
+
+        Button button = (Button) view.findViewById(R.id.remove_shortcut);
+        button.setOnClickListener(v -> DynamicShortcuts.removeShortcuts(getContext()));
     }
 
 }

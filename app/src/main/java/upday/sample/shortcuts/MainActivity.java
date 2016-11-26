@@ -6,68 +6,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 
+import static upday.sample.shortcuts.MyFragmentManager.CART;
+import static upday.sample.shortcuts.MyFragmentManager.CATEGORIES;
+
 public class MainActivity extends AppCompatActivity {
 
-    private static final String MAIN_FRAGMENT = "MainFragment";
-    private static final String CART_FRAGMENT = "CartFragment";
-    private static final String CATEGORIES_FRAGMENT = "CategoriesFragment";
-
-    private static final String FRAGMENT_TO_SHOW = "fragment";
-    private static final String CART = "cart";
-    private static final String CATEGORIES = "categories";
+    private MyFragmentManager mFragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setUpActionBar();
-        handleIntent();
 
-        if (getSupportFragmentManager().findFragmentById(R.id.main_fragment) == null) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.main_fragment, new MainFragment(), MAIN_FRAGMENT)
-                    .addToBackStack(MAIN_FRAGMENT)
-                    .commit();
-        }
+        // restore shortcuts after app upgrade
+        DynamicShortcuts.restoreShortcuts(this);
+
+        mFragmentManager = new MyFragmentManager(getSupportFragmentManager());
+        mFragmentManager.handleIntent(getIntent());
 
         ImageView cartImageView = (ImageView) findViewById(R.id.cart);
-        cartImageView.setOnClickListener(view -> showCartFragment());
+        cartImageView.setOnClickListener(view -> mFragmentManager.showFragment(CART));
 
         ImageView categoriesImageView = (ImageView) findViewById(R.id.categories);
-        categoriesImageView.setOnClickListener(view -> showCategoriesFragment());
-    }
-
-    private void handleIntent() {
-        String extra = getIntent().getStringExtra(FRAGMENT_TO_SHOW);
-        if (extra != null) {
-            switch (extra) {
-                case CART:
-                    showCartFragment();
-                    break;
-                case CATEGORIES:
-                    showCategoriesFragment();
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
-
-    private void showCartFragment() {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.main_fragment, new CartFragment(), CART_FRAGMENT)
-                .addToBackStack(CART_FRAGMENT)
-                .commit();
-    }
-
-    private void showCategoriesFragment() {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.main_fragment, new CategoriesFragment(), CATEGORIES_FRAGMENT)
-                .addToBackStack(CATEGORIES_FRAGMENT)
-                .commit();
+        categoriesImageView.setOnClickListener(view -> mFragmentManager.showFragment(CATEGORIES));
     }
 
     private void setUpActionBar() {
