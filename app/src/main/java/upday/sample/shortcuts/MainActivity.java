@@ -5,9 +5,13 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
+import android.widget.TextView;
 
-import static upday.sample.shortcuts.MyFragmentManager.CART;
-import static upday.sample.shortcuts.MyFragmentManager.CATEGORIES;
+import upday.sample.shortcuts.fragments.MyFragmentManager;
+import upday.sample.shortcuts.shortcuts.DynamicShortcuts;
+
+import static upday.sample.shortcuts.fragments.MyFragmentManager.CART;
+import static upday.sample.shortcuts.fragments.MyFragmentManager.CATEGORIES;
 
 public class MainActivity extends AppCompatActivity {
 

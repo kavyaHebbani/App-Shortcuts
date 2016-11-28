@@ -1,4 +1,4 @@
-package upday.sample.shortcuts;
+package upday.sample.shortcuts.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import upday.sample.shortcuts.R;
 
 /**
  * Created by kavya on, 23/11/16.

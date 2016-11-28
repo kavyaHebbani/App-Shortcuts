@@ -1,4 +1,4 @@
-package upday.sample.shortcuts;
+package upday.sample.shortcuts.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import upday.sample.shortcuts.shortcuts.DynamicShortcuts;
+import upday.sample.shortcuts.R;
 import upday.sample.shortcuts.adapter.MainRecyclerViewAdapter;
 
 import static upday.sample.shortcuts.data.ItemListGenerator.getItemsList;

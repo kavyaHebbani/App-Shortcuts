@@ -12,7 +12,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import upday.sample.shortcuts.DynamicShortcuts;
+import upday.sample.shortcuts.shortcuts.DynamicShortcuts;
 import upday.sample.shortcuts.R;
 
 /**

@@ -12,6 +12,7 @@ import static upday.sample.shortcuts.data.ItemListGenerator.Categories.SPORTS;
 
 /**
  * Created by kavya on, 23/11/16.
+ * In real-time app, getting data needs to performed on background thread.
  */
 public class ItemListGenerator {
 
@@ -24,12 +25,12 @@ public class ItemListGenerator {
 
     public static List<Item> getItemsList() {
         List<Item> items = new ArrayList<>(6);
-        items.add(new Item("item1", GADGETS, 50));
-        items.add(new Item("item2", GADGETS, 70));
-        items.add(new Item("item3", SPORTS, 80));
-        items.add(new Item("item4", SPORTS, 90));
-        items.add(new Item("item5", FASHION, 100));
-        items.add(new Item("item6", FASHION, 60));
+        items.add(new Item("Item1", GADGETS, 50));
+        items.add(new Item("Item2", GADGETS, 70));
+        items.add(new Item("Item3", SPORTS, 80));
+        items.add(new Item("Item4", SPORTS, 90));
+        items.add(new Item("Item5", FASHION, 100));
+        items.add(new Item("Item6", FASHION, 60));
         return items;
     }
 

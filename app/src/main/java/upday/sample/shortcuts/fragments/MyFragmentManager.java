@@ -1,7 +1,9 @@
-package upday.sample.shortcuts;
+package upday.sample.shortcuts.fragments;
 
 import android.content.Intent;
 import android.support.v4.app.FragmentManager;
+
+import upday.sample.shortcuts.R;
 
 /**
  * Created by kavya on, 26/11/16.
@@ -9,24 +11,24 @@ import android.support.v4.app.FragmentManager;
 
 public class MyFragmentManager {
 
-    static final String CART = "cart";
-    static final String CATEGORIES = "categories";
-    static final String FRAGMENT_TO_SHOW = "fragment";
+    public static final String CART = "cart";
+    public static final String CATEGORIES = "categories";
+    public static final String FRAGMENT_TO_SHOW = "fragment";
 
     private static final String CART_FRAGMENT = "CartFragment";
     private static final String CATEGORIES_FRAGMENT = "CategoriesFragment";
 
     private FragmentManager mFragmentManager;
 
-    MyFragmentManager(FragmentManager fragmentManager) {
+    public MyFragmentManager(FragmentManager fragmentManager) {
         mFragmentManager = fragmentManager;
     }
 
-    void handleIntent(Intent intent) {
+    public void handleIntent(Intent intent) {
         showFragment(intent.getStringExtra(FRAGMENT_TO_SHOW));
     }
 
-    void showFragment(String name) {
+    public void showFragment(String name) {
         if (name != null) {
             switch (name) {
                 case CART:

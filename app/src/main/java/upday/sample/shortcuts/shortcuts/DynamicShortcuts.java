@@ -1,4 +1,4 @@
-package upday.sample.shortcuts;
+package upday.sample.shortcuts.shortcuts;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,10 +10,12 @@ import android.widget.Toast;
 import java.util.Arrays;
 import java.util.List;
 
+import upday.sample.shortcuts.MainActivity;
+import upday.sample.shortcuts.R;
 import upday.sample.shortcuts.data.ItemListGenerator;
 
-import static upday.sample.shortcuts.MyFragmentManager.FRAGMENT_TO_SHOW;
 import static upday.sample.shortcuts.data.ItemListGenerator.getIconForCategory;
+import static upday.sample.shortcuts.fragments.MyFragmentManager.FRAGMENT_TO_SHOW;
 
 /**
  * Created by kavya on, 25/11/16.
@@ -38,7 +40,7 @@ public class DynamicShortcuts {
         shortcutManager.setDynamicShortcuts(getShortcutInfo(context, category));
     }
 
-    static void restoreShortcuts(Context context) {
+    public static void restoreShortcuts(Context context) {
         ShortcutManager shortcutManager = getShortcutManager(context);
         if (shortcutManager.getDynamicShortcuts().size() == 0) {
             // restore dynamic shortcuts that needs to be added by default.
@@ -49,11 +51,11 @@ public class DynamicShortcuts {
         }
     }
 
-    static void reportShortcutUsed(Context context, String category) {
+    public static void reportShortcutUsed(Context context, String category) {
         getShortcutManager(context).reportShortcutUsed(category);
     }
 
-    static void removeShortcuts(Context context) {
+    public static void removeShortcuts(Context context) {
         Toast.makeText(context, R.string.shortcuts_removed, Toast.LENGTH_SHORT).show();
         getShortcutManager(context).removeAllDynamicShortcuts();
     }
@@ -68,7 +70,7 @@ public class DynamicShortcuts {
         // Add more shortcuts here
         return Arrays.asList(new ShortcutInfo.Builder(context, category)
                                      .setShortLabel(category)
-                                     .setLongLabel("Open " + category)
+                                     .setLongLabel("Go To " + category)
                                      .setIcon(getIcon(context, category))
                                      .setIntent(getIntent(context, category))
                                      .build());
